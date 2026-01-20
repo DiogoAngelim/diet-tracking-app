@@ -5,7 +5,7 @@ export type Notification = {
   id: string;
   title: string;
   message: string;
-  type?: 'info' | 'success' | 'warning' | 'error';
+  type?: 'info' | 'success' | 'warning' | 'error' | 'nutrient' | 'budget' | 'reminder' | 'summary';
   date: Date;
   read?: boolean;
 };

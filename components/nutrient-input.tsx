@@ -13,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import type { FoodItem } from "@/app/page";
+import type { FoodItem } from "@/types/food-item";
 
 type NutrientInputProps = {
   onAddItem: (item: Omit<FoodItem, "id">) => void;

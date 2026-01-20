@@ -18,7 +18,7 @@ import {
   Line,
   CartesianGrid,
 } from "recharts";
-import type { FoodItem } from "@/app/page";
+import type { FoodItem } from "@/types/food-item";
 
 type NutrientChartsProps = {
   items: FoodItem[];
@@ -119,7 +119,7 @@ export function NutrientCharts({ items, targets }: Props) {
       { name: "Omega-3", actual: weekTotal.omega3, target: weeklyTargets.omega3, status: weekTotal.omega3 >= weeklyTargets.omega3 * 0.8 ? "good" : weekTotal.omega3 >= weeklyTargets.omega3 * 0.5 ? "warning" : "risk" },
       { name: "Iron", actual: weekTotal.iron, target: weeklyTargets.iron, status: weekTotal.iron >= weeklyTargets.iron * 0.8 ? "good" : weekTotal.iron >= weeklyTargets.iron * 0.5 ? "warning" : "risk" },
     ];
-  }, [weeklyData]);
+  }, [weeklyData, dailyTargets.macros.protein, dailyTargets.macros.fiber, dailyTargets.micros.iron, dailyTargets.micros.omega3, dailyTargets.micros.vitaminB12, dailyTargets.micros.vitaminD]);
 
   const pieColors = [COLORS.primary, COLORS.secondary, COLORS.accent];
 

@@ -6,7 +6,9 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest --coverage",
+    "coveralls": "npm run test && cat ./coverage/lcov.info | coveralls"
   },
   "dependencies": {
     "@google-cloud/vision": "^5.3.4",
@@ -66,13 +68,21 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.9",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "coveralls": "^3.1.1",
     "eslint": "^9.39.2",
     "eslint-config-next": "^16.1.3",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
+    "ts-jest": "^29.4.6",
     "tw-animate-css": "1.3.3",
     "typescript": "^5"
   }

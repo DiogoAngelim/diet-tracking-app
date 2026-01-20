@@ -3,9 +3,9 @@
 import { Bell, AlertCircle, Wallet, Clock, BarChart3, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { useNotifications } from "./notifications-context";
+import { useNotifications, Notification } from "./notifications-context";
 
-function getNotificationIcon(type: Notification["type"]) {
+function getNotificationIcon(type: Notification["type"] | undefined) {
   switch (type) {
     case "nutrient":
       return <AlertCircle className="h-5 w-5 text-primary" />;
@@ -80,7 +80,7 @@ export function NotificationsPanel() {
                   <div className="flex items-start justify-between gap-2">
                     <p className="font-medium text-card-foreground">{notification.title}</p>
                     <span className="shrink-0 text-xs text-muted-foreground">
-                      {formatTimeAgo(notification.timestamp)}
+                      {formatTimeAgo(notification.date)}
                     </span>
                   </div>
                   <p className="text-sm text-muted-foreground">{notification.message}</p>
@@ -104,7 +104,7 @@ export function NotificationsPanel() {
         <Card>
           <CardHeader className="pb-3">
             <CardTitle className="text-lg">Observations</CardTitle>
-            <CardDescription>You're all caught up! New observations will appear here.</CardDescription>
+            <CardDescription>You&apos;re all caught up! New observations will appear here.</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col items-center justify-center py-8">
@@ -143,7 +143,7 @@ export function NotificationsPanel() {
                   <div className="flex items-start justify-between gap-2">
                     <p className="font-medium text-card-foreground">{notification.title}</p>
                     <span className="shrink-0 text-xs text-muted-foreground">
-                      {formatTimeAgo(notification.timestamp)}
+                      {formatTimeAgo(notification.date)}
                     </span>
                   </div>
                   <p className="text-sm text-muted-foreground">{notification.message}</p>

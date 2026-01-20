@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import { Target, TrendingUp, TrendingDown, Minus } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import type { FoodItem } from "@/app/page";
+import type { FoodItem } from "@/types/food-item";
 
 import type { NutritionTargets } from "@/components/targets-settings";
 

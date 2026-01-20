@@ -15,7 +15,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
-import type { FoodItem } from "@/app/page";
+import type { FoodItem } from "@/types/food-item";
 
 type ItemTableProps = {
   items: FoodItem[];

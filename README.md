@@ -1,4 +1,5 @@
 # Diet Tracking App
+![Coveralls](https://coveralls.io/repos/github/DiogoAngelim/diet-tracking-app/badge.svg?branch=main)
 
 A diet tracking app with OCR receipt scanning, nutrition analytics, customizable targets, and browser-integrated notifications. Want more?
 

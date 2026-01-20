@@ -181,7 +181,7 @@ export default function ReceiptScanner({ onItemExtracted }: ReceiptScannerProps)
               <Camera className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <CardTitle className="text-lg">Let's read your receipt next</CardTitle>
+              <CardTitle className="text-lg">Let&apos;s read your receipt next</CardTitle>
               <CardDescription>Take a photo and we will extract the info for you...</CardDescription>
             </div>
           </div>
