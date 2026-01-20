@@ -1,0 +1,14 @@
+
+pipeline_name: "OCR"
+# OCR pipeline config for local PP-OCRv5 English models
+# This is a minimal example. Adjust paths and parameters as needed for your models.
+
+pipeline:
+  - type: TextDetection
+    model_dir: official_models/PP-OCRv5_server_det
+  - type: TextRecognition
+    model_dir: official_models/en_PP-OCRv5_mobile_rec
+  - type: TextlineOrientation
+    model_dir: official_models/PP-LCNet_x1_0_doc_ori
+
+# You can add more parameters as needed based on PaddleOCR documentation.
