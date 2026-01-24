@@ -103,4 +103,41 @@ DevTools → Application → Manifest - should show all app details
 4. Configure push notifications
 5. Set up automatic backup/sync
 
+## Deployment Instructions
+
+### Environment Variables Setup
+
+The app uses Google Cloud Vision API for OCR functionality. To deploy securely without exposing credentials:
+
+**1. Local Development:**
+- Keep `GOOGLE_APPLICATION_CREDENTIALS` pointing to your JSON file in `.env`
+- Keep `.env` and `meals-*.json` in `.gitignore` (never commit!)
+
+**2. Production Deployment (Vercel/Netlify/etc.):**
+
+Add these environment variables in your deployment platform:
+
+```bash
+OPENAI_API_KEY="your-openai-api-key"
+GOOGLE_CREDENTIALS_BASE64="your-base64-encoded-credentials"
+```
+
+**To get the base64 credentials:**
+```bash
+cat meals-484821-4b85f2aeeee0.json | base64 | tr -d '\n'
+```
+
+**3. How it works:**
+- OCR API endpoints check for `GOOGLE_CREDENTIALS_BASE64` environment variable
+- If found, decodes it and uses those credentials
+- If not found (local dev), falls back to `GOOGLE_APPLICATION_CREDENTIALS` file path
+- This way, the app works seamlessly in both environments
+
+**4. Security Best Practices:**
+- ✅ Never commit `.env` or credential JSON files to Git
+- ✅ Use environment variables in production
+- ✅ Rotate API keys periodically
+- ✅ Restrict API key permissions to only what's needed
+- ✅ Use separate credentials for development and production
+
 Your app is now a fully functional PWA! 🚀

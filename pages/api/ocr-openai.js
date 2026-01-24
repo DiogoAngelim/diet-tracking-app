@@ -14,7 +14,15 @@ export default async function handler(req, res) {
   }
 
   try {
-    const client = new ImageAnnotatorClient();
+    // Initialize client with credentials from environment
+    const credentials = process.env.GOOGLE_CREDENTIALS_BASE64
+      ? JSON.parse(Buffer.from(process.env.GOOGLE_CREDENTIALS_BASE64, 'base64').toString())
+      : undefined;
+    
+    const client = new ImageAnnotatorClient(
+      credentials ? { credentials } : {}
+    );
+    
     const base64 = imageData.replace(/^data:image\/(png|jpeg);base64,/, '');
     const [result] = await client.textDetection({ image: { content: base64 } });
 
