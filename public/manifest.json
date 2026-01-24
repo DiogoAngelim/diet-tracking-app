@@ -1,0 +1,63 @@
+{
+  "name": "NutriTrack - Your Friendly Diet Companion",
+  "short_name": "NutriTrack",
+  "description": "Track your nutrition, budget, and health goals with a warm, encouraging approach",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-light-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-dark-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": [
+    "health",
+    "productivity"
+  ],
+  "screenshots": [
+    {
+      "src": "/icon.svg",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Track Meal",
+      "short_name": "Track",
+      "description": "Quickly track a meal",
+      "url": "/?mode=track",
+      "icons": [
+        {
+          "src": "/icon.svg",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
