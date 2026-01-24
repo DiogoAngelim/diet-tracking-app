@@ -46,9 +46,9 @@ export function HomeScreen({ userName, mealsToday, caloriesToday, proteinToday }
 
 function QuickStat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-xl bg-primary-foreground/10 p-3 text-center">
-      <p className="text-lg font-semibold">{value}</p>
-      <p className="text-xs text-primary-foreground/70">{label}</p>
+    <div className="rounded-xl bg-primary-foreground/10 backdrop-blur-sm p-3 text-center border border-primary-foreground/20">
+      <p className="text-lg font-semibold text-primary-foreground">{value}</p>
+      <p className="text-xs text-primary-foreground/80">{label}</p>
     </div>
   );
 }
